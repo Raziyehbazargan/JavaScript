@@ -24,15 +24,15 @@
     - reduce
     - foreach
  - Data Structures
-  - Arrays
-  - Stacks & Queues
-  - Linked Lists
-  - Trees
-  - Hash Tables
+    - Arrays
+    - Stacks & Queues
+    - Linked Lists
+    - Trees
+    - Hash Tables
 
   - Security
-   - Same-Origin Policy
-   - CORS (Cross-Origin Resource Sharing)
-   - CSRF (Cross-site request forgery) 
-   - XSS  (Cross-site scripting)
+    - Same-Origin Policy
+    - CORS (Cross-Origin Resource Sharing)
+    - CSRF (Cross-site request forgery) 
+    - XSS  (Cross-site scripting)
  
