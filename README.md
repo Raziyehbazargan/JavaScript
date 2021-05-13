@@ -2,6 +2,7 @@
 
 - OOP
 - Design Patterns
+- UI System Design
 - Dom Traversal
 - Javascript
   - Hositing
