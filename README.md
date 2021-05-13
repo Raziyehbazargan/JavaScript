@@ -16,6 +16,11 @@
   - Promises
   - Ajax | JSON
   - Event Handling
+  - Event Handling:
+      - Event Loop
+      - Event Delegation
+      - Event Bubbling
+      - Event Capturing
   - Polyfill
     - bind
     - apply
