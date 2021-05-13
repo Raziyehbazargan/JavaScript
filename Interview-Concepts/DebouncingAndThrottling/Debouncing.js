@@ -25,4 +25,4 @@ const debounce = function(fn, delay) {
         }, delay);
     }
 }
-const betterFunction = debounce(getData, 500)
+const search = debounce(getData, 500)
