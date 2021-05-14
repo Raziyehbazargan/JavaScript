@@ -28,3 +28,14 @@ Callbacks make sure that a function is not going to run before a task is complet
 
 In JavaScript, the way to create a callback function is to pass it as a parameter to another function, and then to call it back right after something has happened or some task is completed.
 */
+
+function attackEventListner() {
+    let count = 0;
+    document
+    .getElementById('btn')
+    .addEventListener('click', function() {
+        console.log('button is clicked', ++count);
+    });
+}
+
+attackEventListner();

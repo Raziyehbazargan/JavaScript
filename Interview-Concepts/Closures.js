@@ -42,3 +42,26 @@ function printNumbers() {
     console.log('Hello Javascript!');
 }
 printNumbers();
+
+//---------------------------------------------------
+//closure is used in data hiding and encapsulation
+function counter() {
+    var counter = 0; //private no other code ca access this variable or to modify it.
+    return function increamentCounter() {
+        counter++;
+        console.log(counter);
+    }
+}
+
+function Counter() {
+    var count = 0 ;
+    this.increament = function() {
+        count++;
+        console.log(count);
+    }
+
+    this.decrement = function() {
+        count--;
+        console.log(count);
+    }
+}
