@@ -65,3 +65,17 @@ function Counter() {
         console.log(count);
     }
 }
+
+
+
+function btnClicked(e) {
+    var innerText = e.currentTarget.innerText;
+    var currentCount = innerText.match(/\d+/)[0];
+    currentCount++;
+    e.currentTarget.innerText =`Clicked ${currentCount} times`;
+    var btn = document.createElement('BUTTON');
+    var text = document.createTextNode('Clicked 0 times');
+    btn.appendChild(text);
+    btn.onclick = btnClicked;
+    document.getElementById('wrapper').appendChild(btn);
+}
