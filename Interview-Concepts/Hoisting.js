@@ -8,6 +8,7 @@ Note that the declaration is not actually moved - the JavaScript engine parses t
 compilation and becomes aware of declarations and their scopes. 
 It is just easier to understand this behavior by visualizing the declarations as being hoisted to the top of their scope. 
 Let's explain with a few examples.
+
 */
 
 console.log(foo); // undefined
@@ -42,4 +43,17 @@ Variables declared via let and const are hoisted as well.
 However, unlike var and function, they are not initialized and accessing them before the declaration
 will result in a ReferenceError exception.
 The variable is in a "temporal dead zone" from the start of the block until the declaration is processed.
+
+During the compile phase, just microseconds before your code is executed, 
+it is scanned for function and variable declarations. All these functions and variable declarations are added to the memory 
+inside a JavaScript data structure called Lexical Environment. 
+
+So that they can be used even before they are actually declared in the source code.
+All declarations (function, var, let, const and class) are hoisted in JavaScript, while the var declarations 
+are initialized with undefined, but let and const declarations remain uninitialized.
+They will only get initialized when their lexical binding (assignment) is evaluated during runtime by the JavaScript engine. 
+This means you can’t access the variable before the engine evaluates its value at the place it was declared in the source code.
+ This is what we call “Temporal Dead Zone”, A time span between variable creation and its initialization where they 
+ can’t be accessed.
+
 */

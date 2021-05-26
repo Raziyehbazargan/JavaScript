@@ -1,3 +1,28 @@
+//var ,let, const
+/*
+Variables declared using the var keyword are scoped to the function in which they are created, or if created outside 
+of any function, to the global object. let and const are block scoped, meaning they are only accessible within the 
+nearest set of curly braces (function, if-else block, or for-loop).
+
+var allows variables to be hoisted, meaning they can be referenced in code before they are declared. 
+let and const will not allow this, instead throwing an error.
+
+*/
+
+if (true) {
+    var bar = 'bar';
+    let baz = 'baz';
+    const qux = 'qux';
+  }
+
+// var declared variables are accessible anywhere in the function scope.
+console.log(bar); // bar
+// let and const defined variables are not accessible outside of the block they were defined in.
+console.log(baz); // ReferenceError: baz is not defined
+console.log(qux); // ReferenceError: qux is not defined
+
+
+
 //null, undefined or undeclared
 
 //1- undeclared

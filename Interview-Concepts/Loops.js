@@ -25,3 +25,29 @@ const doubled = a.map((num) => {
 //result:  doubled = [2, 4, 6]
 
 
+// Object loops
+/*
+  - for-in
+  - Object.keys(obj).forEach(function(property){})
+  - Object.gtOwnPropertyNames()
+    - Object.getOwnPropertyNames(obj).forEach(function (property) { ... })
+*/
+
+let obj = {name: 'Razi', age: 33, student: false};
+for (let property in obj) console.log(property);
+Object.keys(obj).forEach(property => console.log(property))
+Object.getOwnPropertyNames(obj).forEach(property => console.log(property))
+
+// Array loops
+/*
+  - for loop
+  - forEach((val, index) => {})
+  - for-of 
+      - for (let elem of arr) { ... }
+*/
+
+const arr = ['a', 'b', 'c'];
+
+for (let [index, elem] of arr.entries()) {
+  console.log(index, ': ', elem);
+}

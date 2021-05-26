@@ -41,3 +41,36 @@ An Object is either an abstraction of a real-world thing, same as before, or is 
 (in other words, a Prototype). Objects can be created from thin air, or they can be created from other objects: 
 The abstraction level here is never deeper than 1; 
 The only abstraction that occurs with Prototypal Inheritance is the abstraction away from real-world things.*/
+
+
+//ES5
+function Person(name) {
+    this.name = name;
+}
+
+//The main difference in the constructor comes when using inheritance. If we want to create a Student 
+//class that subclasses Person and add a studentId field, this is what we have to do in addition to the above.
+
+function Student(name, studentId) {
+    Person.call(this, name);
+    this.studentId = studentId;
+}
+
+Student.prototype = Object.create(Person.prototype);
+Student.prototype.constructor = Student;
+
+
+
+//ES6
+class Person {
+    constructor(name) {
+        this.name = name;
+    }
+}
+
+class Student extends Person {
+    constructor(name, studentId) {
+        super(name);
+        this.studentId = studentId;
+    }
+}
