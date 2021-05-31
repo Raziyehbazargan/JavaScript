@@ -79,7 +79,8 @@ function go() {
   //Promise API
   /*
   here are 6 static methods in the Promise class. We’ll quickly cover their use cases here.
-   - Promise.all : we want many promises to execute in parallel and wait until all of them are ready. For instance, download several URLs in parallel and process the content once they are all done.
+   - Promise.all : we want many promises to execute in parallel and wait until all of them are ready.
+    For instance, download several URLs in parallel and process the content once they are all done.
    - 
   */
 

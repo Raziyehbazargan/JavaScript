@@ -4,7 +4,8 @@ AJAX just uses a combination of:
 A browser built-in XMLHttpRequest object (to request data from a web server)
 JavaScript and HTML DOM (to display or use the data)
 
-AJAX allows web pages to be updated asynchronously by exchanging data with a web server behind the scenes. This means that it is possible to update parts of a web page, without reloading the whole page.
+AJAX allows web pages to be updated asynchronously by exchanging data with a web server behind the scenes. 
+This means that it is possible to update parts of a web page, without reloading the whole page.
 
 1. An event occurs in a web page (the page is loaded, a button is clicked)
 2. An XMLHttpRequest object is created by JavaScript
@@ -25,13 +26,56 @@ The XMLHttpRequest API is frequently used for the asynchronous communication or 
 */
 
 function getUsers() {
-    var request = new XMLHttpRequest();
-    request.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            document.getElementsByTagName('p').innerHtml = this.responseText;
+    // 1. Create a new XMLHttpRequest object
+    let xhr = new XMLHttpRequest();
+
+    // 2. Configure it: GET-request for the URL /article/.../load
+    xhr.open('GET', '/article/xmlhttprequest/example/load');
+
+    // 3. Send the request over the network
+    xhr.send();
+
+    // 4. This will be called after the response is received
+    xhr.onload = function() {
+        if (xhr.status != 200) { // analyze HTTP status of the response
+            alert(`Error ${xhr.status}: ${xhr.statusText}`); // e.g. 404: Not Found
+        } else { // show the result
+            alert(`Done, got ${xhr.response.length} bytes`); // response is the server response
         }
     };
 
-    request.open('GET', 'ajax_info.txt', true);
-    request.send();
+    xhr.onprogress = function(event) {
+        if (event.lengthComputable) {
+            alert(`Received ${event.loaded} of ${event.total} bytes`);
+        } else {
+            alert(`Received ${event.loaded} bytes`); // no Content-Length
+        }
+
+    };
+
+    xhr.onerror = function() {
+    alert("Request failed");
+    };
 }
+
+
+//JQuery
+$.ajax({
+
+    url : 'http://voicebunny.comeze.com/index.php',
+    type : 'GET',
+    headers: {
+        'Content-Type':'application/json'
+    },
+    data : {
+        'numberOfWords' : 10
+    },
+    dataType:'json',
+    success : function(data) {              
+        alert('Data: '+data);
+    },
+    error : function(request,error)
+    {
+        alert("Request: "+JSON.stringify(request));
+    }
+})
